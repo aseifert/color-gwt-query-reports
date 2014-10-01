@@ -58,9 +58,9 @@
     function processPosition(pos) {
         var posValue = parseFloat(pos.textContent.replace(",", "."))
 
-        if (posValue < 3.5) {
+        if (posValue < GOOD_POS_MAX) {
             pos.style["background-color"] = COLOR_SUCCESS
-        } else if (posValue < 6.5) {
+        } else if (posValue < MID_POS_MAX) {
             pos.style["background-color"] = COLOR_WARNING
         } else {
             pos.style["background-color"] = COLOR_FAILURE
