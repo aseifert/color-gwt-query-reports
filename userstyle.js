@@ -70,7 +70,7 @@
     for (var i=0; i < commands.length; i++) {
         var cmd = commands[i]
         x = parseFloat(cmd.split(",")[0])
-        y = SVG_HEIGHT - parseFloat(cmd.split(",")[1]) / 1.2
+        y = SVG_HEIGHT - parseFloat(cmd.split(",")[1]) / 1.4
         console.log(x, y)
     }
 
