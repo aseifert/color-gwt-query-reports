@@ -39,6 +39,7 @@
     var BAD_POS_CTR_CUTOFF  = 3
 
 
+    // color stuff
     var rows = document.querySelectorAll("table#grid > tbody > tr")
 
     for (var i=0; i < rows.length; i++) {
@@ -54,6 +55,26 @@
         var ctr = row.getElementsByClassName("click-rate")[0]
         processCTR(ctr, pos)
     }
+
+    // add CTR to svg
+    var svg = document.querySelector("svg")
+    var graph = svg.querySelector("g").querySelector("g")
+
+    var x = svg.querySelector("g").querySelector("g").lastChild.firstChild
+    var d = x.getAttribute("d")
+    var commands = d.split("L")
+
+    var cmd, x, y;
+    var SVG_HEIGHT   = 140
+    var MAGIC_NUMBER = 9
+    for (var i=0; i < commands.length; i++) {
+        var cmd = commands[i]
+        x = parseFloat(cmd.split(",")[0])
+        y = SVG_HEIGHT - parseFloat(cmd.split(",")[1]) / 1.2
+        console.log(x, y)
+    }
+
+
 
     function processPosition(pos) {
         var posValue = parseFloat(pos.textContent.replace(",", "."))
