@@ -114,7 +114,7 @@
     // sprad out values vertically accross the svg
     function calculateSpread(ctrs, clicks, impressions) {
         var max  = Math.max.apply(null, ctrs)
-        
+
         var maxC = Math.max.apply(null, clicks)
         var maxI = Math.max.apply(null, impressions)
         var maxOther = Math.max(maxC, maxI)
@@ -149,7 +149,7 @@
         data.rows.forEach(function(row, i) {
             row.c.push({
                 v: spread * ctrs[i],
-                f: ""+ctrs[i]
+                f: Math.round(ctrs[i] * 100) / 100 + " %"
             })
         })
 
